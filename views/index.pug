@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title= title
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")
+
+  body
+
+    ul(class='menu')
+      each val in value
+        li(class='menu_li' id = val+'a')= val 
+        
+        a(class='button button--remove' id = val  , onclick = 'delete_files("'+val+'"),delete_files("'+val+'a'+'")') Удалить
+        br
+        br
+      else
+        li Ничего не вижу
+
+        
+    button(class='button button--add ' type="button"  onclick='add_files()') Добавить новый файл +
+
+
+    script(src="script.js")
+  style
+    include style.css
